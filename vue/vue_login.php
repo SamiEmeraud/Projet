@@ -1,3 +1,8 @@
+<?php
+session_start();
+include "navbar.html";
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,7 +12,7 @@
 </head>
 <body class="container mt-5">
 <h2 class="mb-4">Connexion</h2>
-<form action="../back/login.php" method="post" class="col-md-6">
+<form action="../back/back_login.php" method="post" class="col-md-6">
     <div class="mb-3">
         <label for="email" class="form-label">Adresse email :</label>
         <input type="email" name="email" id="email" class="form-control" required>
@@ -22,8 +27,5 @@
 </form>
 </body>
 </html>
-<?php
-var_dump($_SESSION);
-exit;
 
-?>
+

@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($sql->rowCount()) {
             // Redirection affirmée  vers la page de connexion
-            header("Location: ../vue/login.html");
+            header("Location: ../vue/vue_login.php");
             exit();
         } else {
             echo "Erreur lors de l'inscription.";
