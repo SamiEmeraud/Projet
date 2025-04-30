@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['email'] = $user['email'];
 
         // Redirige vers la page d’accueil
-        header("Location: ../vue/home.html");
+        header("Location: ../vue/index.php");
         exit();
     } else {
         echo "Email ou mot de passe incorrect.";

@@ -32,20 +32,7 @@ include 'navbar.html'
 </head>
 <body class="bg-light">
 <div class="container py-5">
-    <!-- Bannière de promotion -->
-    <div class="promo-banner">
-        <h4>Livraison gratuite</h4>
-        <p class="mb-1"><strong>Maintenant avec chaque commande</strong></p>
-        <p class="mb-0"><strong>Promotion : 1x2 pour la première commande, 20€ ensuite. Peut être combiné...</strong></p>
-    </div>
 
-    <!-- Section Télécharger l'application -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <h4>Télécharger notre application</h4>
-            <p>Comment ? Mise en ligne de mission à réussir...</p>
-        </div>
-    </div>
 
     <!-- Filtres -->
     <div class="row mb-4">
