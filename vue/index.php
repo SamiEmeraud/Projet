@@ -43,40 +43,30 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
 
 <!-- Grille Bootstrap pour l'affichage des catégories -->
 <div class="row g-4">
-    <!-- Boucle sur chaque catégorie -->
     <?php foreach ($category_product as $row): ?>
-        <div class="col-md-6 col-lg-3"> <!-- Colonne responsive -->
-            <div class="card shadow-sm h-100"> <!-- Carte Bootstrap -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <?php
+                // Chemin vers les images
+                $imagePath = "../Images/img_category/" . $row['category_id'] . ".jpeg"
+                ?>
+
+                <img src="<?= htmlspecialchars($imagePath) ?>"
+                     class="card-img-top"
+                     alt="<?= htmlspecialchars($row['nom_category']) ?>"
+                     style="height: 200px; object-fit: cover;">
+
                 <div class="card-body">
-                    <!-- Nom de la catégorie -->
                     <h5 class="card-title"><?= htmlspecialchars($row['nom_category']) ?></h5>
-
-                    <!-- Description tronquée -->
-                    <p class="card-text text-muted small">
-                        <?= substr(htmlspecialchars($row['description']), 0, 50) ?>...
-                    </p>
-
-                    <!-- Bouton "Voir détails" -->
+                    <p class="card-text text-muted small"><?= substr(htmlspecialchars($row['description']), 0, 50) ?>...</p>
                     <div class="d-flex justify-content-between">
-                        <a href="category_detail.php?id=<?= $row['category_id'] ?>"
-                           class="btn btn-sm btn-outline-primary">
-                            Voir détails
-                        </a>
+
                     </div>
                 </div>
             </div>
         </div>
     <?php endforeach; ?>
-
-    <?php
-    // Chemin vers les images
-    $imagePath = "../Images/img_category" . $row['category_id'] . ".jpeg"
-    ?>
-
-    <img src="<?= htmlspecialchars($imagePath) ?>"
-         class="card-img-top"
-         alt="<?= htmlspecialchars($row['nom_category']) ?>"
-         style="height: 200px; object-fit: cover;">
+</div>
 <!-- Intégration de Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
 </body>
