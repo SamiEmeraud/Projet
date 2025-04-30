@@ -85,7 +85,7 @@ include 'navbar.html'
                 <div class="card shadow-sm h-100">
                     <?php
                     // Chemin vers les images
-                    $imagePath = "../manga/" . $row['product_id'] . ".jpeg"
+                    $imagePath = "../manga/img_product" . $row['product_id'] . ".jpeg"
                     ?>
 
                     <img src="<?= htmlspecialchars($imagePath) ?>"
