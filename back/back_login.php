@@ -21,9 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($user && password_verify($password, $user['password'])) {
         // Connexion réussie → on peut stocker les infos en session
-        $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['username'] = $user['username'];
-        $_SESSION['email'] = $user['email'];
 
         // Redirige vers la page d’accueil
         header("Location: ../vue/index.php");

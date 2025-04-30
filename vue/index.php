@@ -35,11 +35,14 @@
 <!-- Récupération des données des catégories -->
 <?php
 global $category_product;
+session_start();
 include '../back/back_category.php'; // Fichier qui charge les catégories depuis la BDD
 ?>
 
 <!-- Titre principal -->
 <h1>Bienvenue</h1>
+
+<h5 class="card-title"><?=($_SESSION['username']) ?></h5>
 
 <!-- Grille Bootstrap pour l'affichage des catégories -->
 <div class="row g-4">
