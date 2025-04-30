@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03f5040c-8c3d-47d1-9f20-752649cce178" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/back/back_category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manga/HxH.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/category_detail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/vue_boutique.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/vue_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projet.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/add_product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/back_boutique.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/back_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/product_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/product_detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/back_register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/add_product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue/vue_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue/vue_register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -58,21 +34,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Projet\vue" />
@@ -81,11 +58,12 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.436" />
-        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.436" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PS-243.26053.13" />
+        <option value="bundled-php-predefined-a98d8de5180a-1ec7b7818973-com.jetbrains.php.sharedIndexes-PS-243.26053.13" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="03f5040c-8c3d-47d1-9f20-752649cce178" name="Changes" comment="" />
@@ -101,6 +79,7 @@
       <workItem from="1745865116259" duration="615000" />
       <workItem from="1745946897520" duration="788000" />
       <workItem from="1745960380928" duration="949000" />
+      <workItem from="1745998328180" duration="1043000" />
     </task>
     <servers />
   </component>
