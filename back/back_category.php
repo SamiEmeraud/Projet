@@ -21,21 +21,4 @@ $sql = "SELECT * FROM category_product";
 $stmt = $conn->query($sql);
 $category_product = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Récupération des utilisateurs
-$sqlUsers = "SELECT * FROM users";
-$stmtUsers = $conn->query($sqlUsers);
-$users = $stmtUsers->fetchAll(PDO::FETCH_ASSOC);
-global $users;
-//Récupérer le nom de l'utilisateur connecté//
-$username = "Invité"; // Valeur par défaut
-if (isset($_SESSION['user_id'])) {
-    $stmt = $users->prepare("SELECT username FROM users WHERE user_id = user_id");
-    $stmt->bindParam(':user_id', $_SESSION['user_id']);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($user) {
-        $username = $user['username'];
-    }
-}
-
 ?>
