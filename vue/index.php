@@ -68,33 +68,15 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
         </div>
     <?php endforeach; ?>
 
-    <!-- Galerie d'images manga -->
-    <!-- Chaque image est suivie d'une div vide (peut-être pour espacement) -->
-    <img src="../manga/Dragon%20Ball.jpeg" class="vertical-image" alt="Dragon Ball">
-    <div></div>
+    <?php
+    // Chemin vers les images
+    $imagePath = "../Images/img_category" . $row['category_id'] . ".jpeg"
+    ?>
 
-    <img src="../manga/One%20Piece.jpeg" class="vertical-image" alt="One Piece">
-    <div></div>
-
-    <img src="../manga/Naruto.jpeg" class="vertical-image" alt="Naruto">
-    <div></div>
-
-    <img src="../manga/HxH.jpeg" class="vertical-image" alt="Hunter x Hunter">
-    <div></div>
-
-    <img src="../manga/snk.jpeg" alt="Shingeki no Kyojin">
-    <div></div>
-
-    <img src="../manga/jjk.jpeg" alt="Jujutsu Kaisen">
-    <div></div>
-
-    <img src="../manga/Demon%20Slayer.jpeg" alt="Demon Slayer">
-    <div></div>
-
-    <img src="../manga/Mha.jpeg" alt="My Hero Academia">
-    <div></div>
-</div>
-
+    <img src="<?= htmlspecialchars($imagePath) ?>"
+         class="card-img-top"
+         alt="<?= htmlspecialchars($row['nom_category']) ?>"
+         style="height: 200px; object-fit: cover;">
 <!-- Intégration de Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
 </body>
