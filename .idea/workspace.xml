@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03f5040c-8c3d-47d1-9f20-752649cce178" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/back/back_category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manga/HxH.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/category_detail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/vue_boutique.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue/vue_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projet.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/add_product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/back_boutique.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/back_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/product_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/product_detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/back_register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/add_product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue/vue_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue/vue_register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +75,7 @@
       <workItem from="1745666031305" duration="3688000" />
       <workItem from="1745865116259" duration="615000" />
       <workItem from="1745946897520" duration="788000" />
-      <workItem from="1745960380928" duration="949000" />
+      <workItem from="1745960380928" duration="2271000" />
     </task>
     <servers />
   </component>
