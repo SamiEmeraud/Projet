@@ -71,8 +71,7 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
     </button>
 </div>
 <style>
-<!-- SECTION : Trois bannières de catégories avec texte superposé -->
-<!-- Trois bannières sans espace -->
+
 /* Réinitialisation globale */
 * {
 margin: 0;
