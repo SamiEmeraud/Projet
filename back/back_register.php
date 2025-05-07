@@ -39,8 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql->execute([$username, $hashedPassword, $email]);
 
         if ($sql->rowCount()) {
-
+            $_SESSION['login_message']= "Bonjour, nous somme ravis de vous voir connecter.";
             header("Location: ../vue/vue_login.php");
+
             exit();
         } else {
             echo "Erreur lors de l'inscription.";

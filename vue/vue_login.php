@@ -22,7 +22,11 @@ include "navbar.html";
         <label for="password" class="form-label">Mot de passe :</label>
         <input type="password" name="password" id="password" class="form-control" required>
     </div>
-
+    <?php
+    if (isset($_SESSION['login_message'])){
+        echo $_SESSION['login_message'];
+    }
+    ?>
     <button type="submit" class="btn btn-primary">Se connecter</button>
 </form>
 </body>
