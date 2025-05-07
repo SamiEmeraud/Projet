@@ -46,6 +46,7 @@ $_SESSION['captcha'] = $captcha;
     <div class="mb-3">
         <label for="captcha" class="form-label">Recopie ce code : <strong><?= $captcha ?></strong></label>
         <input type="text" name="captcha" id="captcha" class="form-control" required>
+        
     </div>
     <?php
     if (isset($_SESSION['capcha_message'])){

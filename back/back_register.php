@@ -9,7 +9,7 @@ try {
 
 session_start();
 if (isset($_POST['captcha']) && strtolower($_POST['captcha']) == strtolower($_SESSION['captcha'])) {
-    echo "CAPTCHA correct.";
+    $_SESSION['messagecapctha']= "CAPTCHA correct.";
 
 } else {
     $_SESSION['capcha_message']= "CAPTCHA incorrect.";
