@@ -6,136 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Mon E-commerce</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
-<!--    <style>-->
-<!--        :root {-->
-<!--            /* Variables de couleur */-->
-<!--            --color-background: 255, 255, 255;-->
-<!--            --color-foreground: 18, 18, 18;-->
-<!--            --color-button: 228, 152, 24;-->
-<!--            --color-button-text: 255, 255, 255;-->
-<!--            --color-link: 228, 152, 24;-->
-<!---->
-<!--            /* Variables de typographie */-->
-<!--            --font-body-family: 'Assistant', sans-serif;-->
-<!--            --font-heading-family: 'Assistant', sans-serif;-->
-<!--            --font-body-weight: 600;-->
-<!--            --font-heading-weight: 700;-->
-<!--            --font-body-scale: 1.0;-->
-<!--            --font-heading-scale: 1.15;-->
-<!---->
-<!--            /* Variables d'ombre et effets */-->
-<!--            --media-border-opacity: 0.05;-->
-<!--            --media-border-width: 1px;-->
-<!--            --media-radius: 0px;-->
-<!--            --media-shadow-opacity: 0.0;-->
-<!--            --duration-default: 0.2s;-->
-<!--        }-->
-<!---->
-<!--        body {-->
-<!--            font-family: var(--font-body-family);-->
-<!--            font-weight: var(--font-body-weight);-->
-<!--            color: rgba(var(--color-foreground), 0.75);-->
-<!--            background-color: rgb(var(--color-background));-->
-<!--            margin: 0;-->
-<!--            padding: 0;-->
-<!--            display: grid;-->
-<!--            grid-template-rows: auto auto 1fr auto;-->
-<!--            grid-template-columns: 100%;-->
-<!--            min-height: 100vh;-->
-<!--        }-->
-<!---->
-<!--        /* Style pour le conteneur d'images avec effet de superposition */-->
-<!--        .banner__media {-->
-<!--            position: relative;-->
-<!--            width: 100%;-->
-<!--            overflow: hidden;-->
-<!--            border-radius: var(--media-radius);-->
-<!--            border: var(--media-border-width) solid rgba(var(--color-foreground), var(--media-border-opacity));-->
-<!--        }-->
-<!---->
-<!--        .banner__media::after {-->
-<!--            content: "";-->
-<!--            position: absolute;-->
-<!--            top: 0;-->
-<!--            left: 0;-->
-<!--            right: 0;-->
-<!--            bottom: 0;-->
-<!--            background: #000;-->
-<!--            opacity: 0;-->
-<!--            z-index: 1;-->
-<!--            transition: opacity var(--duration-default) ease;-->
-<!--        }-->
-<!---->
-<!--        .banner__media:hover::after {-->
-<!--            opacity: 0.1;-->
-<!--        }-->
-<!---->
-<!--        .banner__image {-->
-<!--            width: 100%;-->
-<!--            height: 100%;-->
-<!--            object-fit: cover;-->
-<!--            display: block;-->
-<!--            transition: transform var(--duration-default) ease;-->
-<!--        }-->
-<!---->
-<!--        .banner__media:hover .banner__image {-->
-<!--            transform: scale(1.03);-->
-<!--        }-->
-<!---->
-<!--        /* Style pour la grille de produits */-->
-<!--        .product-grid {-->
-<!--            display: grid;-->
-<!--            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));-->
-<!--            gap: 2rem;-->
-<!--            padding: 2rem;-->
-<!--        }-->
-<!---->
-<!--        .product-card {-->
-<!--            position: relative;-->
-<!--            overflow: hidden;-->
-<!--            box-shadow: 0 4px 8px rgba(var(--color-shadow), 0.1);-->
-<!--            transition: all var(--duration-default) ease;-->
-<!--        }-->
-<!---->
-<!--        .product-card:hover {-->
-<!--            box-shadow: 0 6px 12px rgba(var(--color-shadow), 0.15);-->
-<!--            transform: translateY(-5px);-->
-<!--        }-->
-<!---->
-<!--        .product-card__info {-->
-<!--            padding: 1.5rem;-->
-<!--            background: rgb(var(--color-background));-->
-<!--        }-->
-<!---->
-<!--        .product-card__title {-->
-<!--            font-family: var(--font-heading-family);-->
-<!--            font-weight: var(--font-heading-weight);-->
-<!--            color: rgb(var(--color-foreground));-->
-<!--            margin: 0 0 0.5rem 0;-->
-<!--            font-size: 1.6rem;-->
-<!--        }-->
-<!---->
-<!--        .product-card__description {-->
-<!--            color: rgba(var(--color-foreground), 0.75);-->
-<!--            font-size: 1.4rem;-->
-<!--            margin: 0;-->
-<!--        }-->
-<!---->
-<!--        @media screen and (min-width: 750px) {-->
-<!--            body {-->
-<!--                font-size: 1.6rem;-->
-<!--            }-->
-<!---->
-<!--            .product-grid {-->
-<!--                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));-->
-<!--            }-->
-<!--        }-->
-<!--    </style>-->
+
 </head>
 <body>
 
 <!-- Inclusion de la barre de navigation -->
 <?php include 'navbar.html'; ?>
+
 
 <!-- Récupération des données des catégories -->
 <?php
@@ -148,7 +25,157 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
 <!-- Titre principal -->
 <h1>Bienvenue</h1>
 
-<h5 class="card-title"><?=($_SESSION['username']) ?></h5>
+<?php if (isset($_SESSION['username'])): ?>
+    <h5 class="card-title"><?= htmlspecialchars($_SESSION['username']) ?></h5>
+<?php else: ?>
+    <h5 class="card-title"></h5>
+<?php endif; ?>
+
+
+<!-- Bannière d'accueil -->
+<div class="banner__media">
+</div>
+<div id="carouselAccueil" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../Images/Accueil/1.jpeg" class="d-block w-100" alt="Slide 1" style="height: 747px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+            <img src="../Images/Accueil/2.jpeg" class="d-block w-100" alt="Slide 2" style="height: 747px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+            <img src="../Images/Accueil/3.jpeg" class="d-block w-100" alt="Slide 3" style="height:  747px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+            <img src="../Images/Accueil/4.jpeg" class="d-block w-100" alt="Slide 1" style="height:  747px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+            <img src="../Images/Accueil/5.jpeg" class="d-block w-100" alt="Slide 1" style="height:  747px; object-fit: cover;">
+        </div>
+    </div>
+
+    <!-- Contrôles gauche/droite -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAccueil" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Précédent</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselAccueil" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Suivant</span>
+    </button>
+</div>
+<style>
+<!-- SECTION : Trois bannières de catégories avec texte superposé -->
+<!-- Trois bannières sans espace -->
+/* Réinitialisation globale */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html, body {
+width: 100%;
+height: 100%;
+margin: 0 !important;
+padding: 0 !important;
+overflow-x: hidden;
+background-color: #fff;
+}
+
+/* Carrousel */
+#carouselAccueil {
+margin: 0 !important;
+padding: 0 !important;
+}
+
+.carousel-inner {
+width: 100%;
+}
+
+.carousel-item img {
+width: 100%;
+height: 747px;
+object-fit: cover;
+display: block;
+border: none;
+}
+
+/* Bannières collées (trois blocs) */
+.three-banner-row {
+display: flex;
+flex-wrap: nowrap;
+width: 100%;
+margin: 0 !important;
+padding: 0 !important;
+gap: 0;
+}
+
+.three-banner-col {
+flex: 1;
+height: 400px;
+position: relative;
+overflow: hidden;
+}
+
+.three-banner-col a {
+display: block;
+width: 100%;
+height: 100%;
+text-decoration: none;
+}
+
+.three-banner-col img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+border: none;
+}
+
+/* Texte superposé au centre */
+.three-banner-caption {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+color: white;
+font-size: 2rem;
+font-weight: bold;
+text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+z-index: 2;
+line-height: 1.2;
+}
+
+/* Titre d'anime spécifique */
+.anime-title {
+font-size: 2.5rem;
+color: #FFD700;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+.three-banner-row {
+flex-direction: column;
+}
+
+.three-banner-col {
+height: 300px;
+}
+
+.three-banner-caption {
+font-size: 1.5rem;
+}
+
+.anime-title {
+font-size: 2rem;
+}
+}
+</style>
+
+<div class="three-banner-row"><div class="three-banner-col"><a href="#"><img src="../Images/img_category/9.jpeg" alt="One Piece"><div class="three-banner-caption"></div></a></div><div class="three-banner-col"><a href="#"><img src="../Images/img_category/10.jpeg" alt="Dragon Ball"><div class="three-banner-caption"></div></a></div><div class="three-banner-col"><a href="#"><img src="../Images/img_category/11.jpeg" alt="Demon Slayer"><div class="three-banner-caption"></div></a></div></div>
+
 
 <!-- Grille Bootstrap pour l'affichage des catégories -->
 <div class="row g-4">
@@ -157,7 +184,7 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
             <div class="card shadow-sm h-100">
                 <?php
                 // Chemin vers les images
-                $imagePath = "../Images/img_category/" . $row['category_id'] . ".jpeg"
+                $imagePath = "../Images/Accueil/" . $row['category_id'] . ".jpeg"
                 ?>
 
                 <img src="<?= htmlspecialchars($imagePath) ?>"
