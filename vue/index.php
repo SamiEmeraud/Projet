@@ -204,10 +204,7 @@ font-size: 2rem;
                         <h5 class="card-title"><?= htmlspecialchars($row['nom_category']) ?></h5>
                         <p class="card-text text-muted small"><?= substr(htmlspecialchars($row['description']), 0, 50) ?>...</p>
 
-                        <!-- AVIS CLIENT -->
-                        <div class="review-box">
-                            <p>⭐️⭐️⭐️⭐️⭐️ — "Super produit, je recommande à 100% !"</p>
-                        </div>
+                     
 
                     </div>
                 </div>
@@ -216,12 +213,16 @@ font-size: 2rem;
 
     </div>
 
-
-<!-- Grille Bootstrap pour l'affichage des catégories -->
 <div class="row g-4">
 
 </div>
-<!-- Intégration de Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    var myCarousel = document.querySelector('#carouselAccueil');
+    var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 3000, 
+        ride: 'carousel'
+    });
+</script>
+
 </body>
 </html>
