@@ -81,7 +81,7 @@ box-sizing: border-box;
 }
 
 html, body {
-    background-color: #f9d7f1;
+    background-color: #F5E6E8;
 width: 100%;
 height: 100%;
 margin: 0 !important;
