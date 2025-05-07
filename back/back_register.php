@@ -1,18 +1,12 @@
 <?php
 // Connexion
+session_start(); 
+
 try {
     $conn = new PDO("mysql:host=localhost;dbname=e_commerce", "root", "");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Erreur : " . $e->getMessage());
-}
-
-session_start();
-if (isset($_POST['captcha']) && strtolower($_POST['captcha']) == strtolower($_SESSION['captcha'])) {
-    $_SESSION['messagecapctha']= "CAPTCHA correct.";
-
-} else {
-    $_SESSION['capcha_message']= "CAPTCHA incorrect.";
 }
 
 // Traitement du formulaire
@@ -26,14 +20,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($mdp !== $confirm) {
         die("Les mots de passe ne correspondent pas.");
+        header("Location: ../vue/vue_register.php");
     }
 
     if ($_POST['captcha'] !== $_SESSION['captcha']) {
         echo "Captcha incorrect. Veuillez réessayer.";
+        header("Location: ../vue/vue_register.php");
         exit;
     }
 
-// Ici tu continues avec le traitement d'inscription : vérification des champs, enregistrement en base, etc.
 
 
     $hashedPassword = password_hash($mdp, PASSWORD_DEFAULT);
@@ -44,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql->execute([$username, $hashedPassword, $email]);
 
         if ($sql->rowCount()) {
-            // Redirection affirmée  vers la page de connexion
+
             header("Location: ../vue/vue_login.php");
             exit();
         } else {
