@@ -38,7 +38,17 @@ include 'navbar.html'
         <label for="confirmPassword" class="form-label">Confirmer mot de passe :</label>
         <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" required>
     </div>
+    <?php
+    session_start();
+    $captcha = substr(str_shuffle('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'), 0, 5);
+    $_SESSION['captcha'] = $captcha;
+    ?>
 
+    <form action="../back/verif.php" method="POST">
+        Recopie ce code : <strong><?= $captcha ?></strong><br>
+        <input type="text" name="captcha" required><br>
+        <button type="submit">Envoyer</button>
+    </form>
     <button type="submit" class="btn btn-primary">S'inscrire</button>
 </form>
 </body>
