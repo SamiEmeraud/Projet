@@ -49,8 +49,8 @@ $_SESSION['captcha'] = $captcha;
         
     </div>
     <?php
-    if (isset($_SESSION['capcha_message'])){
-       echo $_SESSION['capcha_message'];
+    if (isset($_SESSION['capctha_message'])){
+       echo $_SESSION['capctha_message'];
     }
     ?>
     <button type="submit" class="btn btn-primary">S'inscrire</button>

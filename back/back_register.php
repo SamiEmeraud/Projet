@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($_POST['captcha'] !== $_SESSION['captcha']) {
-        echo "Captcha incorrect. Veuillez réessayer.";
+        $_SESSION['capctha_message']= "Captcha incorrect. Veuillez réessayer.";
         header("Location: ../vue/vue_register.php");
         exit;
     }
