@@ -22,8 +22,14 @@ global $category_product;
 include '../back/back_category.php'; // Fichier qui charge les catégories depuis la BDD
 ?>
 
-<!-- Titre principal -->
-<h1>Bienvenue</h1>
+<div>
+
+    <div>
+        <br>
+        <br>
+
+    </div>
+</div>
 
 <?php if (isset($_SESSION['username'])): ?>
     <h5 class="card-title"><?= htmlspecialchars($_SESSION['username']) ?></h5>
@@ -47,10 +53,10 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
             <img src="../Images/Accueil/3.jpeg" class="d-block w-100" alt="Slide 3" style="height:  747px; object-fit: cover;">
         </div>
         <div class="carousel-item">
-            <img src="../Images/Accueil/4.jpeg" class="d-block w-100" alt="Slide 1" style="height:  747px; object-fit: cover;">
+            <img src="../Images/Accueil/4.jpeg" class="d-block w-100" alt="Slide 4" style="height:  747px; object-fit: cover;">
         </div>
         <div class="carousel-item">
-            <img src="../Images/Accueil/5.jpeg" class="d-block w-100" alt="Slide 1" style="height:  747px; object-fit: cover;">
+            <img src="../Images/Accueil/5.jpeg" class="d-block w-100" alt="Slide 5" style="height:  747px; object-fit: cover;">
         </div>
     </div>
 
@@ -75,12 +81,13 @@ box-sizing: border-box;
 }
 
 html, body {
+    background-color: #f9d7f1;
 width: 100%;
 height: 100%;
 margin: 0 !important;
 padding: 0 !important;
 overflow-x: hidden;
-background-color: #fff;
+
 }
 
 /* Carrousel */
@@ -172,36 +179,48 @@ font-size: 1.5rem;
 font-size: 2rem;
 }
 }
+.review-box {
+    background-color: #f1f1f1;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #444;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
 </style>
 
-<div class="three-banner-row"><div class="three-banner-col"><a href="#"><img src="../Images/img_category/9.jpeg" alt="One Piece"><div class="three-banner-caption"></div></a></div><div class="three-banner-col"><a href="#"><img src="../Images/img_category/10.jpeg" alt="Dragon Ball"><div class="three-banner-caption"></div></a></div><div class="three-banner-col"><a href="#"><img src="../Images/img_category/11.jpeg" alt="Demon Slayer"><div class="three-banner-caption"></div></a></div></div>
+        <?php foreach ($category_product as $row): ?>
+            <div class="col-md-6 col-lg-3">
+                <div class="card shadow-sm h-100">
+                    <?php
+                    $imagePath = "../Images/Accueil/" . $row['category_id'] . ".jpeg"
+                    ?>
+                    <img src="<?= htmlspecialchars($imagePath) ?>" class="card-img-top" alt="<?= htmlspecialchars($row['nom_category']) ?>" style="height: 200px; object-fit: cover;">
 
+                    <div class="card-body">
+                        <h5 class="card-title"><?= htmlspecialchars($row['nom_category']) ?></h5>
+                        <p class="card-text text-muted small"><?= substr(htmlspecialchars($row['description']), 0, 50) ?>...</p>
 
-<!-- Grille Bootstrap pour l'affichage des catégories -->
-<div class="row g-4">
-    <?php foreach ($category_product as $row): ?>
-        <div class="col-md-6 col-lg-3">
-            <div class="card shadow-sm h-100">
-                <?php
-                // Chemin vers les images
-                $imagePath = "../Images/Accueil/" . $row['category_id'] . ".jpeg"
-                ?>
-
-                <img src="<?= htmlspecialchars($imagePath) ?>"
-                     class="card-img-top"
-                     alt="<?= htmlspecialchars($row['nom_category']) ?>"
-                     style="height: 200px; object-fit: cover;">
-
-                <div class="card-body">
-                    <h5 class="card-title"><?= htmlspecialchars($row['nom_category']) ?></h5>
-                    <p class="card-text text-muted small"><?= substr(htmlspecialchars($row['description']), 0, 50) ?>...</p>
-                    <div class="d-flex justify-content-between">
+                        <!-- AVIS CLIENT -->
+                        <div class="review-box">
+                            <p>⭐️⭐️⭐️⭐️⭐️ — "Super produit, je recommande à 100% !"</p>
+                        </div>
 
                     </div>
                 </div>
             </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+
+    </div>
+
+
+<!-- Grille Bootstrap pour l'affichage des catégories -->
+<div class="row g-4">
+
 </div>
 <!-- Intégration de Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
