@@ -1,14 +1,18 @@
 <?php
-include 'navbar.html'
-    ?>
+include 'navbar.html';
+session_start();
+$captcha = substr(str_shuffle('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'), 0, 5);
+$_SESSION['captcha'] = $captcha;
+?>
 <head>
     <meta charset="utf-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Inscription</title>
 </head>
 <body class="container mt-5">
 <h2 class="mb-4">Inscription</h2>
-<form action="../back/config.php" method="post" class="col-md-6">
+
+<form action="../back/back_register.php" method="post" class="col-md-6">
     <div class="mb-3">
         <label for="firstname" class="form-label">Prénom :</label>
         <input type="text" name="firstname" id="firstname" class="form-control" required>
@@ -38,17 +42,16 @@ include 'navbar.html'
         <label for="confirmPassword" class="form-label">Confirmer mot de passe :</label>
         <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" required>
     </div>
-    <?php
-    session_start();
-    $captcha = substr(str_shuffle('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'), 0, 5);
-    $_SESSION['captcha'] = $captcha;
-    ?>
 
-    <form action="../back/verif.php" method="POST">
-        Recopie ce code : <strong><?= $captcha ?></strong><br>
-        <input type="text" name="captcha" required><br>
-        <button type="submit">Envoyer</button>
-    </form>
+    <div class="mb-3">
+        <label for="captcha" class="form-label">Recopie ce code : <strong><?= $captcha ?></strong></label>
+        <input type="text" name="captcha" id="captcha" class="form-control" required>
+    </div>
+    <?php
+    if (isset($_SESSION['capcha_message'])){
+       echo $_SESSION['capcha_message'];
+    }
+    ?>
     <button type="submit" class="btn btn-primary">S'inscrire</button>
 </form>
 </body>
