@@ -78,7 +78,7 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
             <img src="../Images/Accueil/3.jpeg" class="d-block w-100" alt="Image 3" style="object-fit: cover;">
         </div>
         <div class="carousel-item" data-bg="../Images/Background_web/bg4.jpeg">
-            <img src="../Images/Accueil/4.jpeg" class="d-block w-100" alt="Image 4" style="object-fit: cover;">
+            <img src="../Images/Accueil/10.jpeg" class="d-block w-100" alt="Image 4" style="object-fit: cover;">
         </div>
         <div class="carousel-item" data-bg="../Images/Background_web/bg5.jpeg">
             <img src="../Images/Accueil/5.jpeg" class="d-block w-100" alt="Image 5" style="object-fit: cover;">
