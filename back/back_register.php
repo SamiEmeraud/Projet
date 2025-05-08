@@ -1,7 +1,7 @@
 <?php
-// Connexion
-session_start(); 
+session_start();
 
+// Connexion à la base de données
 try {
     $conn = new PDO("mysql:host=localhost;dbname=e_commerce", "root", "");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -9,44 +9,59 @@ try {
     die("Erreur : " . $e->getMessage());
 }
 
-// Traitement du formulaire
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $prenom = htmlspecialchars($_POST['firstname'] ?? '');
-    $nom = htmlspecialchars($_POST['lastname'] ?? '');
-    $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
-    $mdp = $_POST['password'] ?? '';
-    $confirm = $_POST['confirmPassword'] ?? '';
-    $birthdate = $_POST['birthdate'] ?? '';
+// Test de réception du formulaire
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    die("Formulaire non soumis correctement.");
+}
 
-    if ($mdp !== $confirm) {
-        die("Les mots de passe ne correspondent pas.");
-        header("Location: ../vue/vue_register.php");
+// Vérification des champs obligatoires
+if (isset($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password'], $_POST['confirmPassword'], $_POST['captcha'])) {
+
+    $firstname = htmlspecialchars(trim($_POST['firstname']));
+    $lastname = htmlspecialchars(trim($_POST['lastname']));
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $password = trim($_POST['password']);
+    $confirmPassword = trim($_POST['confirmPassword']);
+    $captchaInput = trim($_POST['captcha']);
+
+    // Vérification du captcha
+    if ($captchaInput !== $_SESSION['captcha']) {
+        $_SESSION['register_error'] = "Captcha incorrect. Veuillez réessayer.";
+        header('Location: ../vue/vue_register.php');
+        exit();
     }
 
-    if ($_POST['captcha'] !== $_SESSION['captcha']) {
-        $_SESSION['capctha_message']= "Captcha incorrect. Veuillez réessayer.";
-        header("Location: ../vue/vue_register.php");
-        exit;
+    // Vérification de correspondance des mots de passe
+    if ($password !== $confirmPassword) {
+        $_SESSION['register_error'] = "Les mots de passe ne correspondent pas.";
+        header('Location: ../vue/vue_register.php');
+        exit();
     }
 
+    // Hachage du mot de passe
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $username = $firstname . ' ' . $lastname;
 
-
-    $hashedPassword = password_hash($mdp, PASSWORD_DEFAULT);
-    $username = $prenom . ' ' . $nom;
-
+    // Insertion dans la base de données
     try {
-        $sql = $conn->prepare("INSERT INTO users (username, password, email, statue) VALUES (?, ?, ?, 'en ligne')");
-        $sql->execute([$username, $hashedPassword, $email]);
+        $stmt = $conn->prepare("INSERT INTO users (username, password, email, statue) VALUES (?, ?, ?, 'en ligne')");
+        $stmt->execute([$username, $hashedPassword, $email]);
 
-        if ($sql->rowCount()) {
-            $_SESSION['login_message']= "Bonjour, nous somme ravis de vous voir connecter.";
+        if ($stmt->rowCount()) {
+            $_SESSION['login_message'] = "Bonjour, nous sommes ravis de vous voir connecté.";
             header("Location: ../vue/vue_login.php");
-
             exit();
         } else {
-            echo "Erreur lors de l'inscription.";
+            $_SESSION['register_error'] = "Erreur lors de l'inscription.";
+            header('Location: ../vue/vue_register.php');
+            exit();
         }
     } catch (PDOException $e) {
-        die("Erreur : " . $e->getMessage());
+        die("Erreur SQL : " . $e->getMessage());
     }
+} else {
+    $_SESSION['register_error'] = "Veuillez remplir tous les champs obligatoires.";
+    header('Location: ../vue/vue_register.php');
+    exit();
 }
+?>
