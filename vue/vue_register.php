@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'narvbar.html';
 // Générer un captcha aléatoire à chaque chargement de la page
 $_SESSION['captcha'] = substr(str_shuffle('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'), 0, 5);
 ?>
