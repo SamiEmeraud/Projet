@@ -65,11 +65,88 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
 <?php endif; ?>
 
 
+
+</div>
+<style>
+.home-title.hidden-md-down {
+background-color: #5AC2E6; /* couleur bleu clair comme dans l'image */
+color: #FFFFFF;
+font-family: 'Poppins', sans-serif;
+font-size: 14px;
+padding: 15px 15px 15px 45px;
+border-radius: 4px;
+width: 210px;
+height: 46px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0;
+}
+</style>
+<!-- Boutique + cliquable!-->
+<div style="display: flex; padding: 30px 0 0 30px;">
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="../vue/vue_boutique.php" class="home-title hidden-md-down">BOUTIQUE</a>
+        <form action="search.php" method="get" style="display: flex; align-items: center;">
+            <input
+                    class="ui-autocomplete-input"
+                    type="text"
+                    name="query"
+                    placeholder="Rechercher"
+                    aria-label="Rechercher"
+                    role="textbox"
+            />
+            <button type="submit" style="background: transparent; border: none; cursor: pointer; padding-left: 5px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#0066cc" viewBox="0 0 24 24">
+                    <path d="M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+</div>
+
+<style>
+.ui-autocomplete-input {
+width: 200px;
+height: 40px;
+padding: 5px 10px;
+background-color: #F5F5F5;
+border: none;
+border-radius: 4px;
+font-size: 14px;
+outline: none;
+}
+
+.ui-autocomplete-input:focus {
+box-shadow: 0 0 0 2px #cce0ff;
+}
+.home-title.hidden-md-down {
+    background-color: #5AC2E6;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    padding: 15px 15px 15px 45px;
+    border-radius: 4px;
+    width: 210px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-decoration: none; /* enlève le soulignement */
+}
+
+.home-title.hidden-md-down:hover {
+    background-color: #45b0d4; /* effet au survol */
+}
+
+</style>
+
 <!-- Bannière d'accueil -->
 <div id="carouselAccueil" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active" data-bg="../Images/Background_web/bg1.jpeg">
-            <img src="../Images/Accueil/9.jpeg" class="d-block w-100" alt="Image 1" style="object-fit: cover;">
+            <img src="../Images/Accueil/1.jpeg" class="d-block w-100" alt="Image 1" style="object-fit: cover;">
         </div>
         <div class="carousel-item" data-bg="../Images/Background_web/bg2.jpeg">
             <img src="../Images/Accueil/2.jpeg" class="d-block w-100" alt="Image 2" style="object-fit: cover;">
