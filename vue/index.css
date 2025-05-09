@@ -1,0 +1,118 @@
+
+
+    /* Texte superposé au centre */
+    .three-banner-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+    z-index: 2;
+    line-height: 1.2;
+    }
+
+    /* Titre d'anime spécifique */
+    .anime-title {
+    font-size: 2.5rem;
+    color: #FFD700;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+    .three-banner-row {
+    flex-direction: column;
+    }
+
+    .three-banner-col {
+    height: 300px;
+    }
+
+    .three-banner-caption {
+    font-size: 1.5rem;
+    }
+
+    .anime-title {
+    font-size: 2rem;
+    }
+    }
+    .review-box {
+        background-color: #f1f1f1;
+        padding: 8px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        font-style: italic;
+        color: #444;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .home-title.hidden-md-down {
+        background-color: #5AC2E6; /* couleur bleu clair comme dans l'image */
+        color: #FFFFFF;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        padding: 15px 15px 15px 45px;
+        border-radius: 4px;
+        width: 210px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    .ui-autocomplete-input {
+        width: 200px;
+        height: 40px;
+        padding: 5px 10px;
+        background-color: #F5F5F5;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        outline: none;
+        }
+        
+        .ui-autocomplete-input:focus {
+        box-shadow: 0 0 0 2px #cce0ff;
+        }
+        .home-title.hidden-md-down {
+            background-color: #5AC2E6;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            padding: 15px 15px 15px 45px;
+            border-radius: 4px;
+            width: 210px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            text-decoration: none; /* enlève le soulignement */
+        }
+        
+        .home-title.hidden-md-down:hover {
+            background-color: #45b0d4; /* effet au survol */
+        }
+        body {
+            transition: background-image 0.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #ffffff;
+            margin: 0; /* Enlever toute marge du corps */
+        }
+
+        #carouselAccueil .carousel-item img {
+            width: 100%;
+            height: 100vh; /* Pour occuper toute la hauteur de l'écran */
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-inner {
+            margin: 0; /* Supprimer toute marge */
+            padding: 0; /* Supprimer tout padding */
+        }

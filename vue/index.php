@@ -5,32 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Mon E-commerce</title>
-
-    <style>
-        body {
-            transition: background-image 0.5s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #ffffff;
-            margin: 0; /* Enlever toute marge du corps */
-        }
-
-        #carouselAccueil .carousel-item img {
-            width: 100%;
-            height: 100vh; /* Pour occuper toute la hauteur de l'écran */
-            object-fit: cover;
-            display: block;
-        }
-
-        .carousel-inner {
-            margin: 0; /* Supprimer toute marge */
-            padding: 0; /* Supprimer tout padding */
-        }
-    </style>
-
-
-
+    <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
@@ -67,22 +42,7 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
 
 
 </div>
-<style>
-.home-title.hidden-md-down {
-background-color: #5AC2E6; /* couleur bleu clair comme dans l'image */
-color: #FFFFFF;
-font-family: 'Poppins', sans-serif;
-font-size: 14px;
-padding: 15px 15px 15px 45px;
-border-radius: 4px;
-width: 210px;
-height: 46px;
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 0;
-}
-</style>
+
 <!-- Boutique + cliquable!-->
 <div style="display: flex; padding: 30px 0 0 30px;">
     <div style="display: flex; align-items: center; gap: 20px;">
@@ -105,42 +65,6 @@ margin: 0;
     </div>
 </div>
 
-<style>
-.ui-autocomplete-input {
-width: 200px;
-height: 40px;
-padding: 5px 10px;
-background-color: #F5F5F5;
-border: none;
-border-radius: 4px;
-font-size: 14px;
-outline: none;
-}
-
-.ui-autocomplete-input:focus {
-box-shadow: 0 0 0 2px #cce0ff;
-}
-.home-title.hidden-md-down {
-    background-color: #5AC2E6;
-    color: #FFFFFF;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    padding: 15px 15px 15px 45px;
-    border-radius: 4px;
-    width: 210px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    text-decoration: none; /* enlève le soulignement */
-}
-
-.home-title.hidden-md-down:hover {
-    background-color: #45b0d4; /* effet au survol */
-}
-
-</style>
 
 <!-- Bannière d'accueil -->
 <div id="carouselAccueil" class="carousel slide" data-bs-ride="carousel">
@@ -196,8 +120,6 @@ box-shadow: 0 0 0 2px #cce0ff;
 
 </div>
 
-
-<!-- Grille Bootstrap pour l'affichage des catégories -->
 <div class="row g-4">
 
 </div>
