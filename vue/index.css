@@ -1,7 +1,32 @@
+/* Centrage du texte superposé */
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black; /* ou #ffffff selon ton choix */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
+}
 
 
-    /* Texte superposé au centre */
-    .three-banner-caption {
+#carouselAccueil,
+#carouselAccueil .carousel-inner,
+#carouselAccueil .carousel-item {
+    height: 100vh;
+}
+
+#carouselAccueil .carousel-item img {
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+
+
+.three-banner-caption {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -13,106 +38,143 @@
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
     z-index: 2;
     line-height: 1.2;
-    }
+}
 
-    /* Titre d'anime spécifique */
-    .anime-title {
+/* Titre spécifique pour un anime */
+.anime-title {
     font-size: 2.5rem;
     color: #FFD700;
-    }
+}
 
-    /* Responsive */
-    @media screen and (max-width: 768px) {
+/* Responsive design */
+@media screen and (max-width: 768px) {
     .three-banner-row {
-    flex-direction: column;
+        flex-direction: column !important;
     }
 
     .three-banner-col {
-    height: 300px;
+        height: 300px !important;
     }
 
     .three-banner-caption {
-    font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
 
     .anime-title {
-    font-size: 2rem;
+        font-size: 2rem !important;
     }
-    }
-    .review-box {
-        background-color: #f1f1f1;
-        padding: 8px;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        font-style: italic;
-        color: #444;
-        text-align: center;
-        margin-top: 10px;
-    }
-    .home-title.hidden-md-down {
-        background-color: #5AC2E6; /* couleur bleu clair comme dans l'image */
-        color: #FFFFFF;
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        padding: 15px 15px 15px 45px;
-        border-radius: 4px;
-        width: 210px;
-        height: 46px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-    }
-    .ui-autocomplete-input {
-        width: 200px;
-        height: 40px;
-        padding: 5px 10px;
-        background-color: #F5F5F5;
-        border: none;
-        border-radius: 4px;
-        font-size: 14px;
-        outline: none;
-        }
-        
-        .ui-autocomplete-input:focus {
-        box-shadow: 0 0 0 2px #cce0ff;
-        }
-        .home-title.hidden-md-down {
-            background-color: #5AC2E6;
-            color: #FFFFFF;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            padding: 15px 15px 15px 45px;
-            border-radius: 4px;
-            width: 210px;
-            height: 46px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            text-decoration: none; /* enlève le soulignement */
-        }
-        
-        .home-title.hidden-md-down:hover {
-            background-color: #45b0d4; /* effet au survol */
-        }
-        body {
-            transition: background-image 0.5s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #ffffff;
-            margin: 0; /* Enlever toute marge du corps */
-        }
+}
 
-        #carouselAccueil .carousel-item img {
-            width: 100%;
-            height: 100vh; /* Pour occuper toute la hauteur de l'écran */
-            object-fit: cover;
-            display: block;
-        }
+/* Boîte d'avis */
+.review-box {
+    background-color: #f1f1f1;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #444;
+    text-align: center;
+    margin-top: 10px;
+}
 
-        .carousel-inner {
-            margin: 0; /* Supprimer toute marge */
-            padding: 0; /* Supprimer tout padding */
-        }
+/* Bouton "BOUTIQUE" */
+.home-title.hidden-md-down {
+    background-color: #5AC2E6 !important;
+    color: #FFFFFF !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    padding: 15px 15px 15px 45px !important;
+    border-radius: 4px !important;
+    width: 210px !important;
+    height: 46px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    text-decoration: none !important;
+}
+
+.home-title.hidden-md-down:hover {
+    background-color: #45b0d4 !important;
+}
+
+/* Champ de recherche */
+.ui-autocomplete-input {
+    width: 200px;
+    height: 40px;
+    padding: 5px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.ui-autocomplete-input:focus {
+    box-shadow: 0 0 0 2px #cce0ff;
+}
+
+
+
+/* Images du carrousel pleine hauteur */
+#carouselAccueil .carousel-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+/* Supprimer marges du carrousel */
+.carousel-inner {
+    margin: 0;
+    padding: 0;
+}
+.carousel-img {
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+}
+/* Section de l'image avec le texte animé */
+.nouveautes {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Ajuste selon la taille que tu souhaites */
+    background-image: url('../Images/Accueil/New1.jpeg'); /* Remplace par ton image */
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%); /* Met l'image en noir et blanc */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nouveautes-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    position: absolute;
+}
+
+.nouveautes-text {
+    font-size: 3rem; /* Taille du texte */
+    font-weight: bold;
+    animation: fadeIn 3s ease-in-out infinite; /* Animation du texte */
+}
+
+/* Animation du texte */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+

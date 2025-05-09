@@ -44,9 +44,11 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
 </div>
 
 <!-- Boutique + cliquable!-->
-<div style="display: flex; padding: 30px 0 0 30px;">
+<div style="display: flex; flex-direction: column; align-items: flex-start; padding: 30px 0 0 30px;">
+    <img src="../Images/Accueil/logo_boutique.jpeg" alt="Logo" style="width: 150px; height: auto; margin-bottom: 15px;">
     <div style="display: flex; align-items: center; gap: 20px;">
         <a href="../vue/vue_boutique.php" class="home-title hidden-md-down">BOUTIQUE</a>
+
         <form action="search.php" method="get" style="display: flex; align-items: center;">
             <input
                     class="ui-autocomplete-input"
@@ -69,22 +71,22 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
 <!-- Bannière d'accueil -->
 <div id="carouselAccueil" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active" data-bg="../Images/Background_web/bg1.jpeg">
+        <div class="carousel-item active" data-bg="../Images/Background_web/.jpeg">
             <img src="../Images/Accueil/1.jpeg" class="d-block w-100" alt="Image 1" style="object-fit: cover;">
         </div>
-        <div class="carousel-item" data-bg="../Images/Background_web/bg2.jpeg">
+        <div class="carousel-item" data-bg="../Images/Background_web/.jpeg">
             <img src="../Images/Accueil/2.jpeg" class="d-block w-100" alt="Image 2" style="object-fit: cover;">
         </div>
-        <div class="carousel-item" data-bg="../Images/Background_web/bg3.jpeg">
+        <div class="carousel-item" data-bg="../Images/Background_web/.jpeg">
             <img src="../Images/Accueil/3.jpeg" class="d-block w-100" alt="Image 3" style="object-fit: cover;">
         </div>
-        <div class="carousel-item" data-bg="../Images/Background_web/bg4.jpeg">
+        <div class="carousel-item" data-bg="../Images/Background_web/.jpeg">
             <img src="../Images/Accueil/10.jpeg" class="d-block w-100" alt="Image 4" style="object-fit: cover;">
         </div>
-        <div class="carousel-item" data-bg="../Images/Background_web/bg5.jpeg">
+        <div class="carousel-item" data-bg="../Images/Background_web/.jpeg">
             <img src="../Images/Accueil/5.jpeg" class="d-block w-100" alt="Image 5" style="object-fit: cover;">
         </div>
-        <div class="carousel-item" data-bg="../Images/Background_web/bg6.jpeg">
+        <div class="carousel-item" data-bg="../Images/Background_web/.jpeg">
             <img src="../Images/Accueil/6.jpeg" class="d-block w-100" alt="Image 6" style="object-fit: cover;">
         </div>
     </div>
@@ -98,6 +100,12 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
         <span class="visually-hidden">Suivant</span>
     </button>
 </div>
+<!-- Section avec l'image de fond et l'animation du texte "Nouveautés" -->
+<section class="nouveautes">
+    <div class="nouveautes-content">
+        <h1 class="nouveautes-text">Nouveautés</h1>
+    </div>
+</section>
 
 <?php foreach ($category_product as $row): ?>
     <div class="col-md-6 col-lg-3">
