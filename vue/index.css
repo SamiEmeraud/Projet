@@ -1,16 +1,72 @@
-/* Centrage du texte superposé */
+/* === GLOBAL === */
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: black; /* ou #ffffff selon ton choix */
+    height: 100%;
+    background-color: black;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 0.5s ease-in-out;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* === NAVBAR === */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    width: 100%;
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+.navbar-brand img {
+    max-height: 60px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* === SEARCH BAR === */
+form.d-flex input[type="search"] {
+    border-radius: 25px;
+    padding: 6px 15px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 180px;
+    transition: 0.3s;
+}
+
+form.d-flex input[type="search"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+form.d-flex button {
+    border-radius: 25px;
+    padding: 6px 15px;
+    font-size: 14px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+form.d-flex button:hover {
+    background-color: #0056b3;
+}
+
+/* === CAROUSEL === */
 #carouselAccueil,
 #carouselAccueil .carousel-inner,
 #carouselAccueil .carousel-item {
@@ -18,35 +74,98 @@ body {
 }
 
 #carouselAccueil .carousel-item img {
+    width: 100%;
     height: 100vh;
     object-fit: cover;
+    display: block;
+}
+
+.carousel-inner {
+    margin: 0;
+    padding: 0;
+}
+
+/* === SECTION NOUVEAUTÉS === */
+.nouveautes {
+    position: relative;
     width: 100%;
+    height: 400px;
+    background-image: url('../Images/Accueil/New1.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 
+/* === BOUTON "BOUTIQUE" === */
+.home-title.hidden-md-down {
+    background-color: #5AC2E6 !important;
+    color: #FFFFFF !important;
+    font-size: 14px !important;
+    padding: 15px 15px 15px 45px !important;
+    border-radius: 4px !important;
+    width: 210px !important;
+    height: 46px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    margin: 0 !important;
+}
 
+.home-title.hidden-md-down:hover {
+    background-color: #45b0d4 !important;
+}
 
-.three-banner-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* === AVIS / REVIEW === */
+.review-box {
+    background-color: #f1f1f1;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #444;
     text-align: center;
-    color: white;
+    margin-top: 10px;
+}
+
+/* === LOGO BLOC ACCUEIL === */
+.logo-container {
+    display: flex;
+    align-items: center;
+    background-color: #d2e4f4;
+    padding: 20px 30px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-home {
+    width: 90px;
+    height: auto;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+.logo-title h1 {
     font-size: 2rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
-    z-index: 2;
-    line-height: 1.2;
+    margin: 0;
+    color: #1a1a1a;
+    font-weight: 700;
 }
 
-/* Titre spécifique pour un anime */
-.anime-title {
-    font-size: 2.5rem;
-    color: #FFD700;
+.logo-title p {
+    font-size: 1rem;
+    margin: 0;
+    color: #4a4a4a;
 }
 
-/* Responsive design */
+/* === RESPONSIVE === */
 @media screen and (max-width: 768px) {
     .three-banner-row {
         flex-direction: column !important;
@@ -63,118 +182,109 @@ body {
     .anime-title {
         font-size: 2rem !important;
     }
+
+    form.d-flex input[type="search"] {
+        width: 120px;
+    }
+}
+.logo {
+    width: 299px;
+    height: 91.48px;
+    object-fit: contain; /* Garde les proportions sans déformation */
+}
+/* === NOUVEAUX STYLES === */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Boîte d'avis */
-.review-box {
-    background-color: #f1f1f1;
-    padding: 8px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-style: italic;
-    color: #444;
-    text-align: center;
-    margin-top: 10px;
+.brand-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Bouton "BOUTIQUE" */
-.home-title.hidden-md-down {
-    background-color: #5AC2E6 !important;
-    color: #FFFFFF !important;
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 14px !important;
-    padding: 15px 15px 15px 45px !important;
-    border-radius: 4px !important;
-    width: 210px !important;
-    height: 46px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 !important;
-    text-decoration: none !important;
+.main-logo {
+    width: 250px;
+    height: auto;
 }
 
-.home-title.hidden-md-down:hover {
-    background-color: #45b0d4 !important;
+.brand-tagline {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-top: 5px;
 }
 
-/* Champ de recherche */
-.ui-autocomplete-input {
-    width: 200px;
-    height: 40px;
-    padding: 5px 10px;
-    background-color: #F5F5F5;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    outline: none;
+.search-container {
+    width: 40%;
 }
 
-.ui-autocomplete-input:focus {
-    box-shadow: 0 0 0 2px #cce0ff;
+.category-nav {
+    background-color: #2c3e50;
+    padding: 15px 0;
 }
 
-
-
-/* Images du carrousel pleine hauteur */
-#carouselAccueil .carousel-item img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    display: block;
-}
-
-/* Supprimer marges du carrousel */
-.carousel-inner {
-    margin: 0;
-    padding: 0;
-}
-.carousel-img {
-    height: 100vh;
-    object-fit: cover;
-    width: 100%;
-}
-/* Section de l'image avec le texte animé */
-.nouveautes {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Ajuste selon la taille que tu souhaites */
-    background-image: url('../Images/Accueil/New1.jpeg'); /* Remplace par ton image */
-    background-size: cover;
-    background-position: center;
-    filter: grayscale(100%); /* Met l'image en noir et blanc */
+.category-nav ul {
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
 }
 
-.nouveautes-content {
-    text-align: center;
+.category-nav li {
+    margin: 0 15px;
+}
+
+.category-nav a {
     color: white;
-    z-index: 1;
-    position: absolute;
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-transform: uppercase;
 }
 
-.nouveautes-text {
-    font-size: 3rem; /* Taille du texte */
-    font-weight: bold;
-    animation: fadeIn 3s ease-in-out infinite; /* Animation du texte */
+.promo-banner {
+    background-color: #e74c3c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
 }
 
-/* Animation du texte */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
+.promo-banner h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 5px;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .category-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-nav li {
+        margin: 5px 0;
+    }
+}

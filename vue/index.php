@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+
+global $produit;
+include '../back/back_boutique.php';
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,14 +29,7 @@ global $category_product;
 include '../back/back_category.php'; // Fichier qui charge les catégories depuis la BDD
 ?>
 
-<div>
 
-    <div>
-        <br>
-        <br>
-
-    </div>
-</div>
 
 <?php if (isset($_SESSION['username'])): ?>
     <h5 class="card-title"><?= htmlspecialchars($_SESSION['username']) ?></h5>
@@ -41,27 +39,19 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
 
 
 
+
 </div>
 
 <!-- Boutique + cliquable!-->
 <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 30px 0 0 30px;">
-    <img src="../Images/Accueil/logo_boutique.jpeg" alt="Logo" style="width: 150px; height: auto; margin-bottom: 15px;">
+    <img src="../Images/Accueil/logo1.jpeg" alt="Logo" style="width: 150px; height: auto; margin-bottom: 15px;">
     <div style="display: flex; align-items: center; gap: 20px;">
         <a href="../vue/vue_boutique.php" class="home-title hidden-md-down">BOUTIQUE</a>
 
-        <form action="search.php" method="get" style="display: flex; align-items: center;">
-            <input
-                    class="ui-autocomplete-input"
-                    type="text"
-                    name="query"
-                    placeholder="Rechercher"
-                    aria-label="Rechercher"
-                    role="textbox"
-            />
             <button type="submit" style="background: transparent; border: none; cursor: pointer; padding-left: 5px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#0066cc" viewBox="0 0 24 24">
                     <path d="M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
-                </svg>
+
             </button>
         </form>
     </div>
@@ -100,13 +90,22 @@ include '../back/back_category.php'; // Fichier qui charge les catégories depui
         <span class="visually-hidden">Suivant</span>
     </button>
 </div>
+
 <!-- Section avec l'image de fond et l'animation du texte "Nouveautés" -->
 <section class="nouveautes">
     <div class="nouveautes-content">
-        <h1 class="nouveautes-text">Nouveautés</h1>
     </div>
 </section>
+<div class="container mt-4">
 
+    <?php
+    $images = glob("../Images/img_category/*.jpeg");
+    foreach ($images as $image): ?>
+        <div class="mb-3">
+            <img src="<?= htmlspecialchars($image) ?>" class="img-fluid" alt="Image">
+        </div>
+    <?php endforeach; ?>
+</div>
 <?php foreach ($category_product as $row): ?>
     <div class="col-md-6 col-lg-3">
         <div class="card shadow-sm h-100">
