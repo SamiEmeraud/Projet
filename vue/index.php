@@ -14,11 +14,17 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
     <style>
+        .carousel-item {
+            height: 500px; /* hauteur fixe pour l'élément */
+        }
+
         .carousel-item img {
             width: 100%;
-            height: 500px; /* Ajuste selon tes besoins */
+            height: 100%;
             object-fit: cover;
+            display: block;
         }
+
     </style>
 
 </head>
@@ -81,8 +87,9 @@ include '../back/back_category.php';
         <?php
         $imagesCarousel = ['1.jpeg', '2.jpeg', '3.jpeg', '10.jpeg', '5.jpeg', '7.jpeg'];
         foreach ($imagesCarousel as $index => $img): ?>
-            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>" data-bg="../Images/Background_web/.jpeg">
-                <img src="../Images/Accueil/<?= $img ?>" class="d-block w-100 carousel-img" alt="Image <?= $index + 1 ?>">
+            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>" data-bg="../Images/Background_web/<?= $img ?>">
+
+            <img src="../Images/Accueil/<?= $img ?>" class="d-block w-100 carousel-img" alt="Image <?= $index + 1 ?>">
 
             </div>
         <?php endforeach; ?>
@@ -116,24 +123,31 @@ try {
 ?>
 
 <div class="container">
-    <div class="row">
-
+    <div class="row g-4">
         <?php foreach ($produits as $produit): ?>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <?php $imagePath = "../Images/img_product/" . $produit['id'] . ".jpeg"; ?>
-                    <img src="<?= htmlspecialchars($imagePath) ?>" class="card-img-top" alt="<?= htmlspecialchars($produit['nom']) ?>" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo htmlspecialchars($produit['nom']); ?></h5>
-                        <p class="card-text"><?php echo htmlspecialchars($produit['description']); ?></p>
-                        <p class="card-text"><strong><?php echo number_format($produit['prix'], 2); ?> €</strong></p>
-                        <a href="vue_detail_produit.php?id=<?php echo $produit['id']; ?>" class="btn btn-primary">Voir le produit</a>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <a href="vue_detail_produit.php?id=<?= $produit['id'] ?>" class="text-decoration-none">
+                    <div class="custom-card position-relative text-white p-3 rounded-4 shadow h-100" style="background: linear-gradient(135deg, #ff7e5f, #feb47b); transition: transform 0.3s ease;">
+
+                        <!-- Boîte blanche avec l'image -->
+                        <div class="product-image-wrapper bg-white rounded-4 shadow-sm p-3 mb-3 d-flex align-items-center justify-content-center">
+                            <img src="../Images/Figurines/<?= $produit['id'] ?>.jpeg" alt="<?= htmlspecialchars($produit['nom']) ?>" class="img-fluid" style="max-height: 160px; object-fit: contain;">
+                        </div>
+
+                        <h5 class="fw-bold text-center mb-1"><?= htmlspecialchars($produit['nom']) ?></h5>
+                        <p class="text-center text-white-50 mb-2"><?= number_format($produit['prix'], 2) ?> €</p>
+
+                        <div class="arrow-icon position-absolute bottom-0 end-0 p-3">
+                            <i class="bi bi-arrow-right-circle-fill fs-4 text-white"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         <?php endforeach; ?>
     </div>
 </div>
+
+
 
 <!-- Section nouveautés -->
 <section class="nouveautes">
