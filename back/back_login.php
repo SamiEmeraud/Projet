@@ -1,4 +1,5 @@
 <?php
+global $user;
 session_start();
 
 // Connexion à la base de données
@@ -20,17 +21,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password, $user['password'])) {
-        // Connexion réussie
-        $_SESSION['username'] = $user['username'];
-        $_SESSION['login_message'] = "Bienvenue, " . $user['username'] . " !";
-        header("Location: ../vue/index.php");
-        exit();
+    // Connexion réussie
+    $_SESSION['username'] = $user['username'];
+    $_SESSION['prenom'] = $user['prenom'];
+    $_SESSION['nom'] = $user['nom'];
+    $_SESSION['login_message'] = "Bienvenue, " . $user['username'] . " !";
+    header("Location: ../vue/index.php");
+    exit();
+}
+
     } else {
         // Connexion échouée
         $_SESSION['login_message'] = "Email ou mot de passe incorrect.";
         header("Location: ../vue/vue_login.php");
         exit();
-    }
+
 }
+
 
 ?>
