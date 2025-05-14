@@ -48,6 +48,19 @@ if (isset($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['pass
         $stmt->execute([$username, $hashedPassword, $email]);
 
         if ($stmt->rowCount()) {
+            require_once '../mailer.php'; // adapte le chemin selon où est back_register.php
+
+            $result = sendWelcomeEmail($email, $username);
+
+            if ($result === true) {
+                $_SESSION['login_message'] = "Inscription réussie. Un email de bienvenue vous a été envoyé.";
+            } else {
+                $_SESSION['login_message'] = "Inscription réussie, mais l'email n'a pas pu être envoyé : $result";
+            }
+
+            header("Location: ../vue/vue_login.php");
+            exit();
+
             $_SESSION['login_message'] = "Bonjour, nous sommes ravis de vous voir connecté.";
             header("Location: ../vue/vue_login.php");
             exit();
