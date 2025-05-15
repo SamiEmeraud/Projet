@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Générer un captcha aléatoire à chaque chargement de la page
 $_SESSION['captcha'] = substr(str_shuffle('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'), 0, 5);
 ?>
 <!DOCTYPE html>
@@ -17,6 +16,9 @@ $_SESSION['captcha'] = substr(str_shuffle('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'), 0
         .form-label { font-weight: bold; }
         .btn-primary { width: 100%; }
         .login-link { text-align: center; margin-top: 15px; }
+        .btn-google:hover {
+            background-color: #f1f1f1;
+        }
     </style>
     <script>
         function togglePassword(id) {
@@ -36,6 +38,13 @@ $_SESSION['captcha'] = substr(str_shuffle('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'), 0
                 <?= $_SESSION['register_error']; unset($_SESSION['register_error']); ?>
             </div>
         <?php endif; ?>
+
+        <div class="d-grid mb-3">
+            <a href="google-login.php" class="btn btn-light border d-flex align-items-center justify-content-center gap-2 btn-google">
+                <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" width="20" height="20">
+                <span>Continuer avec Google</span>
+            </a>
+        </div>
 
         <div class="mb-3">
             <label for="firstname" class="form-label">Prénom :</label>
@@ -76,10 +85,11 @@ $_SESSION['captcha'] = substr(str_shuffle('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'), 0
         <button type="submit" class="btn btn-primary">S'inscrire</button>
 
         <div class="login-link">
-            <p>Vous avez déjà un compte ? <a href="../vue/vue_login.php">Connectez-vous ici</a>.</p>
+            <p>Vous avez déjà un compte ? <a href="vue_login.php">Connectez-vous ici</a>.</p>
         </div>
     </form>
 </div>
 
 </body>
 </html>
+
